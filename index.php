@@ -54,15 +54,30 @@ $hotels = [
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        foreach($hotels as $hotel => $val) {
-            
-            foreach($val as $data => $d) {
-                echo $data . ' ' . $d . '<br>';
+
+
+<table class="table">
+  <thead>
+    <tr>
+        <th class="col">Name</th>
+        <th class="col">Description</th>
+        <th class="col">Parking</th>
+        <th class="col">Vote</th>
+        <th class="col">Distance To Center</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php 
+        foreach($hotels as $key => $hotel) {
+            echo "<tr>" . $hotel . "</tr>";
+            foreach($hotel as $key => $val) {
+                echo '<td>' . $val . '</td>';
             }
         }
     
     ?>
+  </tbody>
+</table>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
